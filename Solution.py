@@ -1,12 +1,14 @@
-#Problem Number : #15552
+#Problem Number : #9498
 #-----------------------
 
-import sys
-
-case = int(sys.stdin.readline().rstrip())
-quote = ''
-i = 0
-while i< case:
-    quote = sys.stdin.readline().rstrip().split(' ')
-    print(int(quote[0])+int(quote[1]))
-    i += 1
+score = int(input())
+if score >= 90 :
+    print('A')
+elif score >= 80 :
+    print('B')
+elif score >= 70 :
+    print('C')
+elif score >= 60 :
+    print('D')
+else:
+    print('F')
