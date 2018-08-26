@@ -1,11 +1,12 @@
-#Solution Number : #11721
+#Problem Number : #15552
 #-----------------------
 
-quotation = input()
-n = 0
-length = len(quotation)
-rep = length // 10
-while n < rep:
-    print(quotation[n*10:(n+1)*10])
-    n += 1
-print(quotation[n*10:])
+import sys
+
+case = int(sys.stdin.readline().rstrip())
+quote = ''
+i = 0
+while i< case:
+    quote = sys.stdin.readline().rstrip().split(' ')
+    print(int(quote[0])+int(quote[1]))
+    i += 1
