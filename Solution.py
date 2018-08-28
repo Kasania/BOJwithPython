@@ -1,15 +1,16 @@
-#Problem Number : #4344
+#Problem Number : #1110
 #-----------------------
 
-testCase = int(input())
+N = int(input())
+V = N
+cnt = 0
 
-for i in range(testCase):
-    value = list(map(int,input().split()))
-    numOfPerson = value[0]
-    scores = value[1:]
-    avg = sum(scores)/numOfPerson
-    highRank = 0
-    for score in scores:
-        if score > avg:
-            highRank += 1
-    print('%.3f%%' % round((highRank/numOfPerson)*100,3))
+while True :
+    if V < 10:
+        V *= 11
+    else:
+        V = (V%10*10) + ((V//10 + V%10)%10)
+    cnt +=1
+    if V == N:
+        break
+print (cnt)
