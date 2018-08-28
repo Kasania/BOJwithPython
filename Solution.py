@@ -1,7 +1,15 @@
-#Problem Number : #1546
+#Problem Number : #4344
 #-----------------------
 
-numOfSubject = int(input())
-scoresOfSubject = sorted(map(int,input().split()))
-avg = (sum(scoresOfSubject) / numOfSubject) / scoresOfSubject[-1] * 100
-print(avg)
+testCase = int(input())
+
+for i in range(testCase):
+    value = list(map(int,input().split()))
+    numOfPerson = value[0]
+    scores = value[1:]
+    avg = sum(scores)/numOfPerson
+    highRank = 0
+    for score in scores:
+        if score > avg:
+            highRank += 1
+    print('%.3f%%' % round((highRank/numOfPerson)*100,3))
