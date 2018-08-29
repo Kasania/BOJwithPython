@@ -1,20 +1,18 @@
-#Problem Number : #4673
+#Problem Number : #1065
 #-----------------------
 
-def d(i):
-    target = str(i)
-    result = i
-    for n in range(len(target)):
-        result += int(target[n])
-    return result
-
-dArray = [None]*10001
-
-for j in range(1,10001):
-    if d(j)<=10000:
-        dArray[d(j)] = j
-
-for j in range(1,10001):
-    if not(dArray[j]):
-        print(j)
-        
+X = int(input())
+result = 99
+if X<100:
+    print(X)
+else:
+    for i in range(100,X+1):
+        S = str(i)
+        S1 = int(S[0])
+        S2 = int(S[1])
+        S3 = int(S[2])
+        D1 = S1 - S2
+        D2 = S2 - S3
+        if D1 == D2:
+            result +=1
+    print(result)
