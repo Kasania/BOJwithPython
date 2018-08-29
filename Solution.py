@@ -1,16 +1,21 @@
-#Problem Number : #8958
+#Problem Number : #2920
 #-----------------------
 
-testCase = int(input())
+X = input().split()
+rX = list(reversed(X))
 
-for i in range(testCase):
-    total = 0
-    con = 0
-    Str = input()
-    for s in Str:
-        if s == 'O':
-            con += 1
-            total += con
-        else:
-            con = 0
-    print(total)
+asc = True
+des = True
+mix = False
+
+for i in range(1,9):
+    if i != int(X[i-1]):
+        asc = False
+    if i != int(rX[i-1]):
+        des = False
+if asc:
+    print('ascending')
+elif des:
+    print('descending')
+else:
+    print('mixed')
