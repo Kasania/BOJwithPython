@@ -1,21 +1,13 @@
-#Problem Number : #2920
+#Problem Number : #10039
 #-----------------------
 
-X = input().split()
-rX = list(reversed(X))
+scores = [0]*5
 
-asc = True
-des = True
-mix = False
-
-for i in range(1,9):
-    if i != int(X[i-1]):
-        asc = False
-    if i != int(rX[i-1]):
-        des = False
-if asc:
-    print('ascending')
-elif des:
-    print('descending')
-else:
-    print('mixed')
+num = 0
+for i in scores:
+    s = int(input())
+    if s < 40:
+        s = 40
+    scores[num] = s
+    num += 1
+print(int(sum(scores)/5))
