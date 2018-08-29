@@ -1,6 +1,16 @@
-#Problem Number : #2577
+#Problem Number : #8958
 #-----------------------
 
-mul = str(int(input())*int(input())*int(input()))
-for i in range(10):
-    print(mul.count(str(i)))
+testCase = int(input())
+
+for i in range(testCase):
+    total = 0
+    con = 0
+    Str = input()
+    for s in Str:
+        if s == 'O':
+            con += 1
+            total += con
+        else:
+            con = 0
+    print(total)
