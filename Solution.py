@@ -1,6 +1,6 @@
-#Problem Number : #1152
+#Problem Number : #2577
 #-----------------------
 
-print(len(input().split()))
-
-
+mul = str(int(input())*int(input())*int(input()))
+for i in range(10):
+    print(mul.count(str(i)))
