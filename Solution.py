@@ -1,18 +1,17 @@
-#Problem Number : #1065
+#Problem Number : #1463
 #-----------------------
 
 X = int(input())
-result = 99
-if X<100:
-    print(X)
-else:
-    for i in range(100,X+1):
-        S = str(i)
-        S1 = int(S[0])
-        S2 = int(S[1])
-        S3 = int(S[2])
-        D1 = S1 - S2
-        D2 = S2 - S3
-        if D1 == D2:
-            result +=1
-    print(result)
+
+resultArray = [9999]*(X+2)
+resultArray[1] = 0
+for i in range(1,X+1):
+    if i*3 <= X:
+        if resultArray[i * 3] > resultArray[i]+1:
+            resultArray[i * 3] = resultArray[i]+1
+    if i*2 <= X:
+        if resultArray[i * 2] > resultArray[i]+1:
+            resultArray[i * 2] = resultArray[i]+1
+    if resultArray[i + 1] > resultArray[i]+1:
+        resultArray[i + 1] = resultArray[i]+1
+print(resultArray[X])
