@@ -1,5 +1,7 @@
-#Problem Number : #11654
+#Problem Number : #10809
 #-----------------------
 
-print(ord(input()))
+S = input()
 
+for i in range(ord('a'),ord('z')+1):
+    print(S.find(chr(i)),end=' ')
