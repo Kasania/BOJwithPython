@@ -1,7 +1,13 @@
-#Problem Number : #10809
+#Problem Number : #2675
 #-----------------------
 
-S = input()
+case = int(input())
+for j in range(case):
+    S = input().split()
+    R = int(S.pop(0))
+    T = ''
+    for s in S[0]:
+        for i in range(R):
+            T += s
+    print(T)
 
-for i in range(ord('a'),ord('z')+1):
-    print(S.find(chr(i)),end=' ')
