@@ -1,13 +1,5 @@
-#Problem Number : #10039
+#Problem Number : #11654
 #-----------------------
 
-scores = [0]*5
+print(ord(input()))
 
-num = 0
-for i in scores:
-    s = int(input())
-    if s < 40:
-        s = 40
-    scores[num] = s
-    num += 1
-print(int(sum(scores)/5))
