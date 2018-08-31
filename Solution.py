@@ -1,13 +1,15 @@
-#Problem Number : #2675
+#Problem Number : #1157
 #-----------------------
+text = list(input().upper())
 
-case = int(input())
-for j in range(case):
-    S = input().split()
-    R = int(S.pop(0))
-    T = ''
-    for s in S[0]:
-        for i in range(R):
-            T += s
-    print(T)
+result = [0]*27
+A = ord('A')
+Z = ord('Z')
+for i in text:
+    result[ord(i)-A] += 1
 
+maxN = max(result)
+if result.count(maxN) > 1:
+    print('?')
+else:
+    print(chr(A + result.index(maxN)))
