@@ -1,18 +1,9 @@
-#Problem Number : #5622
+#Problem Number : #2941
 #-----------------------
 
 text = input()
-A = ord('A')
-result = [-1]*len(text)
-S = ord('S')
-Z = ord('Z')
-for i, s in enumerate(text):
-    code = ord(s)
-    if code >= S  :
-        if code == Z:
-            code -= 1
-        code -= 1
-    code -= A
-    result[i] = code // 3 + 3
+cAlpha = ('c=','c-','dz=','d-','lj','nj','s=','z=')
 
-print(sum(result))
+for cA in cAlpha:
+    text = text.replace(cA,'!')
+print(len(text))
