@@ -1,15 +1,25 @@
-#Problem Number : #1157
+#Problem Number : #1316
 #-----------------------
-text = input().upper()
 
-result = [0]*27
-A = ord('A')
-Z = ord('Z')
-for i in text:
-    result[ord(i)-A] += 1
+case = int(input())
 
-maxN = max(result)
-if result.count(maxN) > 1:
-    print('?')
-else:
-    print(chr(A + result.index(maxN)))
+total = 0
+a = ord('a')
+for i in range(case):
+    text = input()
+    prv = ''
+    isChecked = [False]*27
+
+    for s in text:
+
+        if prv != s:
+            sCode = ord(s)-a
+            if isChecked[sCode]:
+                total -= 1
+                break
+            else:
+                isChecked[sCode] = True
+                prv = s
+    total += 1
+
+print(total)
