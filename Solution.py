@@ -1,25 +1,8 @@
-#Problem Number : #1316
+#Problem Number : #2908
 #-----------------------
 
-case = int(input())
+numbers = input().split()
+numbers[0] = int(numbers[0][::-1])
+numbers[1] = int(numbers[1][::-1])
 
-total = 0
-a = ord('a')
-for i in range(case):
-    text = input()
-    prv = ''
-    isChecked = [False]*27
-
-    for s in text:
-
-        if prv != s:
-            sCode = ord(s)-a
-            if isChecked[sCode]:
-                total -= 1
-                break
-            else:
-                isChecked[sCode] = True
-                prv = s
-    total += 1
-
-print(total)
+print(numbers[0] if numbers[0] > numbers[1] else numbers[1])
