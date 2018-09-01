@@ -1,6 +1,6 @@
 #Problem Number : #1157
 #-----------------------
-text = list(input().upper())
+text = input().upper()
 
 result = [0]*27
 A = ord('A')
