@@ -1,8 +1,18 @@
-#Problem Number : #2908
+#Problem Number : #5622
 #-----------------------
 
-numbers = input().split()
-numbers[0] = int(numbers[0][::-1])
-numbers[1] = int(numbers[1][::-1])
+text = input()
+A = ord('A')
+result = [-1]*len(text)
+S = ord('S')
+Z = ord('Z')
+for i, s in enumerate(text):
+    code = ord(s)
+    if code >= S  :
+        if code == Z:
+            code -= 1
+        code -= 1
+    code -= A
+    result[i] = code // 3 + 3
 
-print(numbers[0] if numbers[0] > numbers[1] else numbers[1])
+print(sum(result))
