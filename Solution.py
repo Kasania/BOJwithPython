@@ -1,16 +1,20 @@
-#Problem Number : #2292
+#Problem Number : #1193
 #-----------------------
 
-dst = int(input())
-if dst == 1:
-    print('1')
+inputNumber = int(input())
+sumNum = 1
+tNum = 0
+
+while inputNumber > tNum:
+    tNum += sumNum
+    sumNum += 1
+
+M = 0
+S = 0
+if sumNum % 2 == 0:
+    S = tNum - inputNumber + 1
+    M = sumNum - S
 else:
-    dst -= 1
-    currentRoom = 1
-    while True:
-        if currentRoom * 6 >= dst:
-            break
-        else:
-            dst -= currentRoom*6
-            currentRoom += 1
-    print(currentRoom+1)
+    M = tNum - inputNumber + 1
+    S = sumNum - M
+print('%d/%d'%(S,M))
