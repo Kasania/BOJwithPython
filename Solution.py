@@ -1,19 +1,20 @@
-#Problem Number : #1011
+#Problem Number : #10250
 #-----------------------
-
-import math
 
 testCase = int(input())
 
 for T in range(testCase):
-    pos = list(map(int,input().split()))
-    gap = pos[1] - pos[0]
-    i = 1
-    # 1+2+3+...+ n +...+3+2+1 = n^2
-    while i*i <= gap:
-        i += 1
-    i -= 1
+    H,W,N = map(int,input().split())
 
-    # n^2에 속하지 못한 부분의 길이
-    gap = math.ceil( (gap-i*i) / i)
-    print(i*2 - 1 + gap)
+    Y = 0
+    X = 1
+    cnt = 0
+    while True:
+        if Y > H :
+            Y = 1
+            X += 1
+        if cnt == N:
+            break
+        Y += 1
+        cnt += 1
+    print( Y*100 + X)
