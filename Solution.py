@@ -1,21 +1,15 @@
-#Problem Number : #2775
+#Problem Number : #1475
 #-----------------------
 
-apt = [[0 for x in range(15)] for y in range(15)]
-for i in range(1,15):
-    apt[0][i] = i
+import sys
+import math
 
-for y in range(1,15):
-    for x in range(1,15):
-        if x == 1:
-            apt[y][x] = apt[y-1][x]
-        else:
-            cnt = 0
-            for k in range (1,x+1):
-                cnt += apt[y-1][k]
-            apt[y][x] = cnt
+number = list(sys.stdin.readline())[:-1]
+cnt = [0]*10
 
-for T in range(int(input())):
-    k = int(input())
-    n = int(input())
-    print(apt[k][n])
+for i in number:
+    cnt[int(i)] += 1
+cnt[6] = math.ceil((cnt[6] + cnt[9])/2)
+cnt[9] = cnt[6]
+
+print(max(cnt))
