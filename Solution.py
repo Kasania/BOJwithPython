@@ -1,15 +1,14 @@
-#Problem Number : #1475
+#Problem Number : #1149
 #-----------------------
 
-import sys
-import math
+CurValue = [0]*3
+PreValue = [0]*3
 
-number = list(sys.stdin.readline())[:-1]
-cnt = [0]*10
+for t in range(int(input())):
+    CurValue = list(map(int,input().split()))
+    CurValue[0] += min(PreValue[1], PreValue[2])
+    CurValue[1] += min(PreValue[0], PreValue[2])
+    CurValue[2] += min(PreValue[0], PreValue[1])
+    PreValue = CurValue[:]
 
-for i in number:
-    cnt[int(i)] += 1
-cnt[6] = math.ceil((cnt[6] + cnt[9])/2)
-cnt[9] = cnt[6]
-
-print(max(cnt))
+print(min(PreValue))

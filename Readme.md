@@ -38,3 +38,4 @@ Site : https://www.acmicpc.net/
 [10250](https://www.acmicpc.net/problem/10250)
 [2775](https://www.acmicpc.net/problem/2775)
 [1475](https://www.acmicpc.net/problem/1475)
+[1149](https://www.acmicpc.net/problem/1149)
