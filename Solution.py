@@ -1,14 +1,23 @@
-#Problem Number : #1149
+#Problem Number : #1978
 #-----------------------
 
-CurValue = [0]*3
-PreValue = [0]*3
+N = int(input())
+numbers = list(map(int,input().split()))
 
-for t in range(int(input())):
-    CurValue = list(map(int,input().split()))
-    CurValue[0] += min(PreValue[1], PreValue[2])
-    CurValue[1] += min(PreValue[0], PreValue[2])
-    CurValue[2] += min(PreValue[0], PreValue[1])
-    PreValue = CurValue[:]
+primeNumbers = [True]*1001
+primeNumbers[1] = False
+cnt = 0
 
-print(min(PreValue))
+for i in range(2,1001):
+    x = i
+    while True:
+        x += i
+        if x>1000:
+            break
+        primeNumbers[x] = False
+
+for V in numbers:
+    if primeNumbers[V]:
+        cnt += 1
+
+print(cnt)
