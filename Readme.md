@@ -41,3 +41,4 @@ Site : https://www.acmicpc.net/
 [1149](https://www.acmicpc.net/problem/1149)
 [1978](https://www.acmicpc.net/problem/1978)
 [2490](https://www.acmicpc.net/problem/2490)
+[2231](https://www.acmicpc.net/problem/2231)
